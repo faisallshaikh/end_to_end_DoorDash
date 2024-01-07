@@ -1,0 +1,9 @@
+2024-01-05 15:42:56,501 root Starting...
+2024-01-05 15:42:56,501 root Initializing....
+2024-01-05 15:42:56,501 root Initializing Data Transformation
+2024-01-05 15:42:56,972 root Preparing Transformation/Preprocessor Object
+2024-01-05 15:42:56,972 root Transformation Object Created
+2024-01-05 15:42:58,511 root Creating pickle file
+2024-01-05 15:42:58,531 root Pickle file created
+2024-01-05 15:42:58,531 root Transformation Object saved
+2024-01-05 15:42:58,539 root Evaluating Model

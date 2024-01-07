@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: DoorDashProject
+Version: 0.0.1
+Author: Faisal
+Author-email: thefaisalshaikh@gmail.com
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: category_encoders
+Requires-Dist: flask

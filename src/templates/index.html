@@ -1,0 +1,48 @@
+<html>
+    <body>
+        <h1>Delivery Time Estimation</h1><br>
+        <form method="post" action="/predict">
+            <label>market_id</label><br>
+            <input type="number" name="market_id"><br><br>
+
+            <label>store_id</label><br>
+            <input type="number" name="store_id"><br><br>
+
+            <label>order_protocol</label><br>
+            <input type="number" name="order_protocol"><br><br>
+
+            <label>total_items</label><br>
+            <input type="number" name="total_items"><br><br>
+
+            <label>subtotal</label><br>
+            <input type="number" name="subtotal"><br><br>
+
+            <label>num_distinct_items</label><br>
+            <input type="number" name="num_distinct_items"><br><br>
+
+            <label>total_onshift_dashers</label><br>
+            <input type="number" name="total_onshift_dashers"><br><br>
+
+            <label>total_busy_dashers</label><br>
+            <input type="number" name="total_busy_dashers"><br><br>
+
+            <label>total_outstanding_orders</label><br>
+            <input type="number" name="total_outstanding_orders"><br><br>
+
+            <label>estimated_order_place_duration</label><br>
+            <input type="number" name="estimated_order_place_duration"><br><br>
+
+            <label>estimated_store_to_consumer_driving_duration</label><br>
+            <input type="number" name="estimated_store_to_consumer_driving_duration"><br><br>
+
+            <label>non_null_primary_category</label><br>
+            <input type="text" name="non_null_primary_category"><br><br>
+
+            <label>time</label><br>
+            <input type="number" name="time"><br><br>
+
+            <input type="submit" value="Predict"><br><br>
+        </form>
+        <h2>Result = {{result}}</h2>
+    </body>
+</html>
