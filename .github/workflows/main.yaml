@@ -1,53 +1,37 @@
-name: Deploy to App Runner - Image based # Name of the workflow
+name: Build and push image to ECR
 on:
   push:
-    branches: [ main ] # Trigger workflow on git push to main branch
-  workflow_dispatch: # Allow manual invocation of the workflow
-jobs:  
-  deploy:
+    branches:
+      - main
+
+
+
+jobs:
+  build-and-push-ecr-image:
+    name: Build Image
     runs-on: ubuntu-latest
-
-    steps:      
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-
-      - name: Configure AWS credentials
-        id: aws-credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1        
-
-      - name: Build, tag, and push image to Amazon ECR
-        id: build-image
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: privacy-protect
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"  
-
-      - name: Deploy to App Runner
-        id: deploy-apprunner
-        uses: awslabs/amazon-app-runner-deploy@main        
-        with:
-          service: privacy-protect-app-runner
-          image: ${{ steps.build-image.outputs.image }}          
-          access-role-arn: ${{ secrets.ROLE_ARN }}       
-          region: ${{ secrets.AWS_REGION }}
-          cpu : 1
-          memory : 2
-          port: 80
-          wait-for-service-stability: true
-
-      - name: App Runner ID
-        run: echo "App runner ID ${{ steps.deploy-apprunner.outputs.service-id }}"
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Install Utilities
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq unzip
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: dimondpriceprediction
+        IMAGE_TAG: latest
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      
