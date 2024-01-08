@@ -1,0 +1,8 @@
+2024-01-08 10:22:00,386 werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.108:8080
+2024-01-08 10:22:00,386 werkzeug [33mPress CTRL+C to quit[0m
+2024-01-08 10:22:29,340 werkzeug 127.0.0.1 - - [08/Jan/2024 10:22:29] "GET / HTTP/1.1" 200 -
+2024-01-08 10:22:29,410 werkzeug 127.0.0.1 - - [08/Jan/2024 10:22:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-01-08 10:23:31,485 werkzeug 127.0.0.1 - - [08/Jan/2024 10:23:31] "POST /predict HTTP/1.1" 200 -
