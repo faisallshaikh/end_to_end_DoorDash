@@ -4,4 +4,4 @@ COPY requirements.txt .
 COPY . /app
 RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python3", "src/web_flask.py"]
+ENTRYPOINT ["python3", "web_flask.py"]
