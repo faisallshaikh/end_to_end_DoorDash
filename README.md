@@ -58,9 +58,12 @@ Prepocessing the data by handling the missing values, removing duplicates and an
 
 ♦ dataset info - we have `197428` entries and `16` columns in our dataset,
 
+
 ♦ We have 3 object types features in dataset. Featuers `created_at` and `actaul_delivery_time` has dates but is of object type, converting both the features to date time format using `pd.to_datetime` so that we can subtract `actaul_delivery_time` - `created_at` to get the actual delivery_time in seconds, and the resulting feature will be our target variable 
 
 `target_variable` = `created_at` - `actaul_delivery_time`
+
+#### Handling Missing Values
 
 we have `1.77 %` percent of missing data in dataset. Handling missing values has never been a straight approach, if there are any patterns in the missing values then its analyst's job to look into them which might lead to interesting and helpful insights in the bussiness, if there aren't any patterns then we can follow the most common approach which will be using mean or median if the data is continious or mode in case of categorical data. If any feature has more than 80% data missing then we could just drop it , as using mode might lead to a imbalanced feature
 
@@ -75,9 +78,19 @@ Now that we have handled missing values , duplicates and cleaned our data, we wi
 Exploring the data using descriptive statistics and data visualization techniques and other methods to understand its characteristics and relationship
 
 There are two ways to check the `data normality test`\
-♦ Analytically__
+♦ Analytically\
 ♦ Graphically
 
+Graphically we use `Histogram` and `QQ Plot` to check the normality of the data distribution\
+
+##### Observations 
+1. As we can see no data is normally distributed \
+2. Each feature has many outliers \
+3. There are certain features which has extreme outliers like - total_items,                  estimated_order_place_duration and delivery_time\
+4. Target_variable has extreme outlier in it, checking for any pattern in outlier , if not then drop\
+5. Most of the features are skewed
+
+### Feature Engineering 
 
 
 
