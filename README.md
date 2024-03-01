@@ -117,3 +117,6 @@ we use `Yeo-Johnson Transformation` which can handle both positive and negative 
 
 After performing power transformation now we have data less skewed and more towards normally distributed
 
+## Encoding 
+
+Encoding the data to train the machine learning model\
