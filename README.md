@@ -19,3 +19,10 @@ The attached file `historical_data.csv` contains a subset of deliveries received
 
 #### `Note` - 
 All Money (dollar) values given in dataset are in cents and all the time duarion values given are in seconds
+
+Each column corresponds to a feature as explained below : 
+
+Time features 
+• `market_id` - A city/region in which DoorDash operates
+• `created_at`: Timestamp in UTC when the order was submitted by the consumer to DoorDash
+• `actual_delivery_time`: when the order was delivered to the consumer
