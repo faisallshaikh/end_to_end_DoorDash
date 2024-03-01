@@ -84,13 +84,15 @@ There are two ways to check the `data normality test`\
 Graphically we use `Histogram` and `QQ Plot` to check the normality of the data distribution\
 
 ##### Observations 
-1. As we can see no data is normally distributed \
-2. Each feature has many outliers \
-3. There are certain features which has extreme outliers like - total_items,                  estimated_order_place_duration and delivery_time\
-4. Target_variable has extreme outlier in it, checking for any pattern in outlier , if not then drop\
+1. As we can see no data is normally distributed 
+2. Each feature has many outliers 
+3. There are certain features which has extreme outliers like - total_items,                  estimated_order_place_duration and delivery_time
+4. Target_variable has extreme outlier in it, checking for any pattern in outlier , if not then drop
 5. Most of the features are skewed
 
 ### Feature Engineering 
+
+![alt text](image.png)
 
 
 
