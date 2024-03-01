@@ -8,5 +8,6 @@ When a consumer places an order on DoorDash, we show the expected time of delive
 
 Specifically : we will create a model that will predict the total delivery duration in seconds 
 i.e. the time taken from 
+
 • Start - the time consumer submits the order to
 • End - When the order will be delivered to the consumer 
