@@ -27,8 +27,16 @@ Each column corresponds to a feature as explained below :
 • `created_at`: when the order was submitted by the consumer to DoorDash
 • `actual_delivery_time`: when the order was delivered to the consumer
 
-#### Store features
+### Store features
 
-`store_id`: an id representing the restaurant the order was submitted for
-`store_primary_category`: cuisine category of the restaurant, e.g., italian, asian
-`order_protocol`: a store can receive orders from DoorDash through many modes. This field represents an id denoting the protocol
+• `store_id`: an id representing the restaurant the order was submitted for 
+• `store_primary_category`: cuisine category of the restaurant, e.g., italian, asian
+• `order_protocol`: a store can receive orders from DoorDash through many modes. This field represents an id denoting the protocol.
+
+### Order features
+
+• `total_items`: total number of items in the order
+• `subtotal`: total value of the order submitted (in cents)
+• `num_distinct_items`: number of distinct items included in the order
+• `min_item_price`: price of the item with the least cost in the order (in cents)
+• `max_item_price`: price of the item with the highest cost in the order (in cents)
