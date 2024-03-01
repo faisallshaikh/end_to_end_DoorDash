@@ -50,3 +50,34 @@ The following features are values at the time of created_at (order submission ti
 • `total_outstanding_orders`: Number of orders within 10 miles of this order that are currently being processed.
 
 
+## In-Depth Project Analysis 
+
+### Data Cleaning 
+
+Prepocessing the data by handling the missing values, removing duplicates and any inconsistency in the dataset
+
+♦ dataset info - we have `197428` entries and `16` columns in our dataset,
+
+♦ We have 3 object types features in dataset. Featuers `created_at` and `actaul_delivery_time` has dates but is of object type, converting both the features to date time format using `pd.to_datetime` so that we can subtract `actaul_delivery_time` - `created_at` to get the actual delivery_time in seconds, and the resulting feature will be our target variable 
+
+`target_variable` = `created_at` - `actaul_delivery_time`
+
+we have `1.77 %` percent of missing data in dataset. Handling missing values has never been a straight approach, if there are any patterns in the missing values then its analyst's job to look into them which might lead to interesting and helpful insights in the bussiness, if there aren't any patterns then we can follow the most common approach which will be using mean or median if the data is continious or mode in case of categorical data. If any feature has more than 80% data missing then we could just drop it , as using mode might lead to a imbalanced feature
+
+We have some features with missing values in it, we will be using mean , median or mode if the feature has less than 1% missing values and remaining features will be handled accordingly. 
+
+We have an object column `store_primary_category` with missing values, we will be filling the missing values based on feature `store_id`. `store_primary_category` is `cuisine category of the restuarant`. We will be getting `mode` or `most_frequent` value of the `store_primary_category` for each `store_id` and then we will be mapping those `cuisine_category` to each `store_id`. And we will be droping all nan values as there is no pattern in it.
+
+Now that we have handled missing values , duplicates and cleaned our data, we will performing  statistics based analysis on the dataset
+
+## Exploratory Data Analysis (EDA)
+
+Exploring the data using descriptive statistics and data visualization techniques and other methods to understand its characteristics and relationship
+
+There are two ways to check the `data normality test`\
+♦ Analytically__
+♦ Graphically
+
+
+
+
