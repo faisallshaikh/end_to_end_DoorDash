@@ -22,7 +22,13 @@ All Money (dollar) values given in dataset are in cents and all the time duarion
 
 Each column corresponds to a feature as explained below : 
 
-Time features 
+### Time features 
 • `market_id` - A city/region in which DoorDash operates
-• `created_at`: Timestamp in UTC when the order was submitted by the consumer to DoorDash
+• `created_at`: when the order was submitted by the consumer to DoorDash
 • `actual_delivery_time`: when the order was delivered to the consumer
+
+#### Store features
+
+`store_id`: an id representing the restaurant the order was submitted for
+`store_primary_category`: cuisine category of the restaurant, e.g., italian, asian
+`order_protocol`: a store can receive orders from DoorDash through many modes. This field represents an id denoting the protocol
