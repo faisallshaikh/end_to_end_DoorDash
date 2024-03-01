@@ -92,7 +92,28 @@ Graphically we use `Histogram` and `QQ Plot` to check the normality of the data 
 
 ### Feature Engineering 
 
+Checking Correlation of each feature with respect to target feature
+
 ![alt text](image.png)
 
+Extracting and creating  `time` `day` `year` features from the `actaul_delivery_time` feature, and checking if any of these three facctors affect the target_variable.
 
+![alt text](image-1.png)
+
+Time has the inverse relation with the target variable which might be usefull, and we drop the day and year
+
+#### Removing redundant features
+
+A redundant feature in a dataset is a feature that does not add any new or unique information to the analysis. In simpler terms, redundant features are those that are highly correlated with other features or have low variance, making them less informative or valuable for predicting the target variable.\
+So we will iterate each feature with every other feature to get the redundant features 
+
+we have `total_onshift_dashers` `total_busy_dashers` `total_outstanding_orders` = `0.94` highly correlated with each other, and `subtotal` `max_item_price` `min_item_price` = `0.68` correlated, thus we will be dropping redundant features
+
+#### Data Transformation
+
+As we have seen above most of the features are highly skewed\
+performing power transformation on data we stabilize the variance and make the data more normally distributed, which can lead to increased model performance\
+we use `Yeo-Johnson Transformation` which can handle both positive and negative values from `sklearn library` 
+
+After performing power transformation now we have data less skewed and more towards normally distributed
 
