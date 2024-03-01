@@ -40,3 +40,13 @@ Each column corresponds to a feature as explained below :
 • `num_distinct_items`: number of distinct items included in the order
 • `min_item_price`: price of the item with the least cost in the order (in cents)
 • `max_item_price`: price of the item with the highest cost in the order (in cents)
+
+### Market features
+
+The following features are values at the time of created_at (order submission time):
+
+• `total_onshift_dashers`: Number of available dashers who are within 10 miles of the store at the time of order creation
+• `total_busy_dashers`: Subset of above total_onshift_dashers who are currently working on an order
+• `total_outstanding_orders`: Number of orders within 10 miles of this order that are currently being processed.
+
+
