@@ -117,6 +117,30 @@ we use `Yeo-Johnson Transformation` which can handle both positive and negative 
 
 After performing power transformation now we have data less skewed and more towards normally distributed
 
+#### Treating Outliers
+So here we treated outliers after data transformation as before we had outliers with extreme values, as we are dealing with delivery time here and delivery time might increse to a extreme point in a certain scenarios, so it was not a good idea to treat with outliers before hand.
+Now that we have transformed the data and stabilized the variance, now we can deal with extreme outliers if there are any.\
+There are two methods to deal with outliers \
+1. Trimming 
+2. Capping 
+
+So here in our case we will be capping the outliers, as it is time dependent there might have been some times where delivery might have been happended late. Thus will cap with the maximum values
+
 ## Encoding 
 
 Encoding the data to train the machine learning model\
+As most of the features in our dataset are numeric type, there is only one feature '`remainder__non_null_primary_category`' which is object type, we will be encoding it to numerical type 
+
+'`remainder__non_null_primary_category`' - object feature has 73 unique values in it, 
+if we use one hot encoding or pd.dummies there will be sparsity, which will lead to too many columns, thus we will try with `target_encoding`\
+Remember `Target_Encoding` leads to\
+♦ Overfitting\ 
+♦ Data leakage\
+♦ Interpretability
+
+## Training the model 
+1. Linear Regression
+2. RandomForestRegressor
+3. SVR 
+4. XGBoost
+
