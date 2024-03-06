@@ -194,3 +194,14 @@ RMSE - 630
 
 Transformed data with target encoding is performing well but do remember target encoding has many drawbacks
 
+# Model Deployment
+
+AWS Services for deployment\
+🚀 Deployment:\
+`Continuous Integration and Deployment (CI-CD) pipeline using Git Actions, coupled with Amazon ECR and App Runner, ensures seamless updates and accessibility.`\
+Using Git-Actions we will be runnig a build test and docker images are containerized.This containerized application is stored in Amazon ECR. This is where we can manage our container images and repositories securely. 
+
+
+By selecting the ECR repository that contains our container image as the source for App Runner service. This tells App Runner where to pull the image from for deployment.
+
+The process from Amazon ECR to Amazon App Runner simplifies the deployment and management of containerized applications, allowing us to focus on developing our application instead of managing infrastructure.
