@@ -94,11 +94,11 @@ Graphically we use `Histogram` and `QQ Plot` to check the normality of the data 
 
 Checking Correlation of each feature with respect to target feature
 
-![alt text](rough_files/image-1.png)
+![alt text](rough_files/image.png)
 
 Extracting and creating  `time` `day` `year` features from the `actaul_delivery_time` feature, and checking if any of these three facctors affect the target_variable.
 
-![alt text](rough_files/image.png)
+![alt text](rough_files/image-1.png)
 
 Time has the inverse relation with the target variable which might be usefull, and we drop the day and year
 
