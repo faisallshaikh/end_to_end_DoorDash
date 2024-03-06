@@ -146,22 +146,22 @@ Remember `Target_Encoding` leads to\
 
 
 Now to modelling where we will use the data to train our model on which we have been working on\
-1. `Linear Regression` 
+1. `Linear Regression`\ 
 with linear regression we are able to get the `test score` of 0.18 which is not quite good 
 So our linear regression model `training score` is 0.23, which shows that linear regression model is not fitting the training data well or not learning well the data patterns
 
-2. `Decision tree` 
+2. `Decision tree`\ 
 training score of decision tree is 1.0 i.e. 100%, which shows model is learning well on training data. Test score is -0.66 which is not quite good, means it is overfitting\
 Lets try tuning decision tree\
 afer performing randomized search cv and grid search cv tuning we are getting test score of 0.14,rmse - 1003.58
 
-3. `SVM` 
+3. `SVM`\ 
 SVM has a test score of 0.17 and its performing very slow
 
-Now its favorite time :
-4. `RandomForestRegressor`
+Now its favorite time :\
+4. `RandomForestRegressor`\
 This model is performing well but its taking lot of time to build the model which is `computational complexity`,\
-we will lower our `computation time` by feeding the data in percents like 20% of data, 50% , 75% and full data, by having the less data we will be able to perform n number of hyperparameter tuning with having to worry about compuatation speed and slowly we will increase the data to 100%
+we will lower our `computation time` by feeding the data in percents like 20% of data, 50% , 75% and full data, by having the less data we will be able to perform n number of hyperparameter tuning without having to worry about compuatation speed and slowly we will increase the data to 100%
 
 compared to previous ones this model is performing well on train data as well as test data with `rmse` 355.28  
 
@@ -169,7 +169,7 @@ compared to previous ones this model is performing well on train data as well as
 `XGBRegressor`:\
 train score - 0.78\
 test score - 0.65\
-`rmse` - 310.48\
+`rmse` - 310.48
 
 Thus XGBoost is our model which has the lowest RMSE
 
