@@ -194,6 +194,8 @@ RMSE - 630
 
 Transformed data with target encoding is performing well but do remember target encoding has many drawbacks
 
+#### Creating a web-application using Flask which will act as API
+
 # Model Deployment
 
 AWS Services for deployment\
